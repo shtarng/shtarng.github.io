@@ -1,0 +1,476 @@
+/* Style colors used */
+:root {
+  --shared-color1: #767a81;
+  --shared-color2: white;
+
+  --day-color1: #80d8ff;
+  --day-color2: #998c00;
+  --day-color3: #ffea00;
+
+  /*Work Experience collapsible colors*/
+  --day-color4: #006fad;
+  --day-color5: #0388a6;
+
+  --night-color1: #1a191d;
+  --night-color2: #37474f;
+  --night-color3: #fb3d46;
+  /*bg slider skills section*/
+}
+
+/* Top Navigation Bar Section */
+
+/* Add a black background color to the top navigation */
+.topnav {
+  position: fixed;
+  /* Keep the navigation bar fixed at the top */
+  top: 0;
+  /* Position it at the top of the viewport */
+  width: 100%;
+  z-index: 1;
+  border-radius: 0;
+  /* Make it span the full width of the viewport */
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: var(--shared-color2);
+  text-align: left;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+/* Slider in top navigation bar for day & night style */
+
+/* Slider styles */
+.slider {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  height: 30px;
+  width: 90px;
+  border: solid 4px white;
+  border-radius: 20px;
+  transition: background 0.5s;
+  z-index: 1;
+}
+
+.slider.light {
+  background: var(--day-color1);
+}
+
+.slider.dark {
+  background: var(--night-color2);
+}
+
+.slider-toggle {
+  /* Sun & Moon*/
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  height: 22px;
+  width: 22px;
+  top: 2px;
+  left: 4px;
+  border-radius: 50%;
+  transition: left 0.5s, background 0.5s;
+}
+
+.slider-toggle.light {
+  border: solid 2px var(--day-color2);
+  background: var(--day-color3);
+}
+
+.slider-toggle.dark {
+  border: solid 2px white;
+  background: #cfd8dc;
+  left: 60px;
+}
+
+.slider-accent {
+  position: relative;
+  z-index: -1;
+  box-shadow: 0 0 transparent;
+  transition: box-shadow 0.5s;
+}
+
+.slider-accent.light {
+  left: 44px;
+  top: -13px;
+  background: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  /* Cloud */
+  box-shadow: 8px 0 white, 15px 0 white, 8px -5px white;
+}
+
+.slider-accent.dark {
+  top: -13px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  /* Stars */
+  box-shadow: 15px 0 #cccccc, 45px -5px #cccccc, 30px 5px #cccccc;
+}
+
+body,
+main,
+html {
+  font-family: Times New Roman, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: black;
+  text-align: center;
+  padding: 0;
+}
+
+h1.nightheader,
+h2.nightheader,
+h3.nightheader {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+.day {
+  display: block;
+}
+
+.night {
+  display: none;
+}
+
+div.day {
+  background-color: var(--shared-color2);
+}
+
+div.night {
+  background-color: var(--night-color1);
+}
+
+.mutual {
+  flex-direction: column;
+  align-items: center;
+  height: 20%;
+}
+
+article.nightwhitestars {
+  background-color: var(--shared-color2);
+}
+
+article.nightblackstars {
+  background-color: var(--night-color1);
+}
+
+p {
+  color: var(--shared-color1);
+  font-size: 1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+ul {
+  width: 70%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p.night {
+  color: var(--shared-color1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p.quote {
+  color: var(--shared-color2);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p.centered {
+  text-align: center;
+}
+
+.skills_item {
+  display: inline-block;
+  padding: 3px 6px;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+  background: var(--day-color5);
+  border-radius: 5px;
+  font-weight: 600;
+  color: white;
+}
+
+.skills-header {
+  color: var(--night-color1);
+}
+
+#images-container {
+  display: flex;
+  margin-bottom: 4px;
+  overflow-x: hidden;
+  width: 80vw;
+  white-space: nowrap;
+  cursor: grab;
+}
+
+.image {
+  width: auto;
+  height: clamp(100px, 30vh, 400px);
+  object-fit: fill;
+  padding: 0.6vw;
+}
+
+.pandaimage {
+  position: absolute;
+  top: -80px;
+  right: 0px;
+  width: clamp(30px, 10vh, 90px);
+}
+
+.melonimage {
+  position: absolute;
+  left: -20vw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+}
+
+.levelup-image {
+  position: relative;
+  width: 200px;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: var(--day-color4);
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 70%;
+  max-width: 1000px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  background-color: var(--day-color5);
+}
+
+.content {
+  padding: 0px;
+  background-color: var(--night-color1);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  width: 70%;
+  max-width: 1000px;
+}
+
+.content-text {
+  color: white;
+  width: 80%;
+}
+
+.collapsible:after {
+  content: "+";
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "-";
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  align-items: stretch;
+}
+
+.grid-card {
+  background: #f5f5f5;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.parallax-day {
+  /* The image used is an example! */
+  background-image: url("../images/backgrounds/AI-sun.webp");
+
+  /* Set a specific height */
+  height: 42vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-night {
+  /* The image used is an example! */
+  background-image: url("../images/backgrounds/AI-moon.webp");
+
+  /* Set a specific height */
+  height: 45vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-stars {
+  /* The image used is an example! */
+  background-image: url("../images/backgrounds/background-stars.png");
+
+  /* Set a specific height */
+  height: 10vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-buttons {
+  display: inline-block;
+  /* Display as inline-block to make them appear next to each other */
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  /* Add margin to separate the buttons (adjust as needed) */
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  /* Optional, for vertical alignment */
+  justify-content: space-around;
+  /* Adjust this as needed to control spacing between items */
+}
+
+blockquote p.quote::before,
+blockquote p.quote::after {
+  content: "“";
+  font-size: 4rem;
+  margin: -18px 0 0 -36px;
+  position: absolute;
+  opacity: 0.5;
+}
+
+blockquote p.quote::after {
+  content: "”";
+  margin: 0 -72px 0 0;
+}
+
+.spacer {
+  aspect-ratio: 1000/100;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layer1 {
+  background-image: url("../images/svgdividers/wave1.svg");
+}
+
+.layer2 {
+  background-image: url("../images/svgdividers/wave2.svg");
+}
+
+.layer3 {
+  background-image: url("../images/svgdividers/wave3.svg");
+}
+
+.layer4 {
+  background-image: url("../images/svgdividers/wave4.svg");
+}
+
+.layer5 {
+  background-image: url("../images/svgdividers/wave5.svg");
+}
+
+.layer6 {
+  background-image: url("../images/svgdividers/wave6.svg");
+}
+
+.layer7 {
+  background-image: url("../images/svgdividers/wave7.svg");
+}
+
+.scroll-button {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  background: var(--night-color1);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scroll-button:hover {
+  background-color: var(--day-color5);
+}
+
+.scroll-button.left {
+  left: 15px;
+}
+
+.scroll-button.right {
+  right: 15px;
+}
+
+
+@media only screen and (max-width: 450px) {
+  .onmobile {
+    display: none;
+  }
+}
