@@ -237,13 +237,6 @@ p.centered {
   padding: 0.6vw;
 }
 
-.pandaimage {
-  position: absolute;
-  top: -80px;
-  right: 0px;
-  width: clamp(30px, 10vh, 90px);
-}
-
 .dogimage {
   position: absolute;
   left: -20vw;
